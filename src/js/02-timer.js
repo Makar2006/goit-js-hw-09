@@ -60,6 +60,9 @@ function onClick() {
       spanHourEl.textContent = timerAswer.hours;
       spanMinEl.textContent = timerAswer.minutes;
       spanSecEl.textContent = timerAswer.seconds;
+    } else if (count < 0) {
+      Notiflix.Report.success('Wow', 'Congratulations!!!!', 'Thanks');
+      clearInterval(timer);
     }
   }, 1000);
 }

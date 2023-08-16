@@ -13,7 +13,7 @@ function getRandomHexColor() {
 
 function whenStart() {
   whenClick();
-  timerC = setInterval(() => {
+  const timerC = setInterval(() => {
     const randColor = getRandomHexColor();
     document.body.style.backgroundColor = randColor;
   }, 1000);

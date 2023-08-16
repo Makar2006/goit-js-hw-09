@@ -16,7 +16,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    const now = new Date();
+    const now = Date.now();
     if (selectedDates[0].getTime() < now) {
       buttonEl.disabled = true;
 
@@ -53,7 +53,7 @@ buttonEl.addEventListener('click', onClick);
 
 function onClick() {
   let timer = setInterval(() => {
-    let count = new Date(inputEl.value) - new Date();
+    let count = new Date(inputEl.value) - Date.now();
     if (count >= 0) {
       let timerAswer = convertMs(count);
       spanDayEl.textContent = timerAswer.days;

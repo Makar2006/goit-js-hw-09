@@ -12,19 +12,24 @@ function getRandomHexColor() {
 }
 
 function whenStart() {
-  setTimeout(() => {
-    randColor = getRandomHexColor();
-    document.body.style.backgroundColor = randColor;
-  }, 0);
+  whenClick();
   timerC = setInterval(() => {
-    randColor = getRandomHexColor();
+    const randColor = getRandomHexColor();
     document.body.style.backgroundColor = randColor;
   }, 1000);
-  btnStartEL.disabled = true;
-  btnStopEL.disabled = false;
+  updatedisabled(true, false);
 }
 function whenStop() {
   clearInterval(timerC);
-  btnStartEL.disabled = false;
-  btnStopEL.disabled = true;
+  updatedisabled(false, true);
+}
+
+function updatedisabled(a, b) {
+  btnStartEL.disabled = a;
+  btnStopEL.disabled = b;
+}
+
+function whenClick() {
+  const randColor = getRandomHexColor();
+  document.body.style.backgroundColor = randColor;
 }
